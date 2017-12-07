@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions_1i2tx2r" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="decideEligibility" name="Decide eligibility">
+    <decisionTable id="decisionTable">
+      <input id="input1" label="Age" camunda:inputVariable="">
+        <inputExpression id="inputExpression1" typeRef="integer">
+          <text>age</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_09kf7ei" label="Criminal Record" camunda:inputVariable="">
+        <inputExpression id="LiteralExpression_050nnqj" typeRef="boolean">
+          <text>criminalRecord</text>
+        </inputExpression>
+      </input>
+      <output id="output1" label="Eligibility Result" name="eligibilityResult" typeRef="boolean" />
+      <rule id="row-53305049-1">
+        <inputEntry id="UnaryTests_14dsuny">
+          <text><![CDATA[<18]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_146z19q">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1d5x1ir">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="row-53305049-2">
+        <inputEntry id="UnaryTests_1w4t2hl">
+          <text><![CDATA[>=18]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0s0hv2i">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05eyi7s">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="row-53305049-3">
+        <inputEntry id="UnaryTests_0n31wm6">
+          <text><![CDATA[>=18]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a1294i">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0saddke">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
